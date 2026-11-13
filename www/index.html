@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1769e0"><title>miniAI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="logo">m<span>AI</span></div><div><b>miniAI</b><small>YOUR AI ASSISTANT</small></div></div>
+    <button class="new-chat" id="newChat">＋ Cuộc trò chuyện mới</button>
+    <div class="side-label">LỊCH SỬ</div><div id="history" class="history"></div>
+    <div class="side-bottom"><button id="settingsBtn">⚙ Cài đặt</button><div class="profile"><div class="avatar">m</div><div><b>miniAI User</b><small>Personal workspace</small></div></div></div>
+  </aside>
+  <main class="main">
+    <header><button class="mobile-menu" id="menuBtn">☰</button><div class="header-title"><b>miniAI</b><span class="online-dot"></span><small id="status">Chưa kết nối AI</small></div><button class="icon-btn" id="clearBtn" title="Xóa cuộc trò chuyện">⌫</button></header>
+    <section class="conversation" id="conversation">
+      <div class="welcome" id="welcome"><div class="welcome-logo">m<span>AI</span></div><h1>Xin chào! Tôi là <em>miniAI</em></h1><p>Tôi có thể giúp gì cho bạn hôm nay?</p>
+      <div class="suggestions"><button data-prompt="Giải thích trí tuệ nhân tạo bằng cách dễ hiểu">✦ Giải thích một chủ đề</button><button data-prompt="Lập kế hoạch học tập trong 7 ngày">▤ Lập kế hoạch</button><button data-prompt="Viết một đoạn code JavaScript đơn giản">⌘ Viết code</button><button data-prompt="Gợi ý ý tưởng cho một dự án mới">◇ Sáng tạo ý tưởng</button></div></div>
+      <div id="messages" class="messages"></div>
+    </section>
+    <footer><div class="composer"><textarea id="prompt" rows="1" placeholder="Nhắn tin cho miniAI..."></textarea><button id="sendBtn" aria-label="Gửi">➤</button></div><div class="disclaimer">miniAI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.</div></footer>
+  </main>
+</div>
+<dialog id="settings">
+<form method="dialog" class="settings-card"><div class="modal-head"><h2>Cài đặt miniAI</h2><button class="icon-btn" value="cancel">✕</button></div>
+<label>Địa chỉ API (OpenAI-compatible)<input id="apiUrl" placeholder="https://api.openai.com/v1"></label>
+<label>API Key<input id="apiKey" type="password" placeholder="Nhập API key"></label>
+<label>Tên model<input id="model" placeholder="gpt-4o-mini" value="gpt-4o-mini"></label>
+<label>Địa chỉ backend (để trống nếu chạy cùng máy)<input id="backendUrl" placeholder="http://localhost:3000"></label>
+<p class="hint">API key được lưu trong bộ nhớ trình duyệt trên thiết bị này. Không chia sẻ thiết bị hoặc mã nguồn chứa khóa bí mật.</p>
+<div class="modal-actions"><button type="button" class="secondary" id="testBtn">Kiểm tra kết nối</button><button class="primary" id="saveSettings" value="save">Lưu cài đặt</button></div><p id="testResult" class="hint"></p>
+</form></dialog>
+<script src="app.js"></script>
+</body></html>
