@@ -1,0 +1,8 @@
+{
+  "appId": "com.miniai.assistant",
+  "appName": "miniAI",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
